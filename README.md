@@ -13,5 +13,11 @@ hwpaddwd -b -c .htpasswd qdrant mypassword
 Then start container with
 
 ```
-docker-compose up
+INITIAL_PEER=http://peer:6335 docker-compose up
+```
+
+Or for a second+ peer
+
+```
+BOOTSTRAP_PEER=http://peer_1:6335 docker-compose up
 ```

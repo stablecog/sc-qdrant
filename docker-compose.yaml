@@ -2,8 +2,16 @@ version: '3.9'
 services:
   qdrant:
     image: qdrant/qdrant:v1.1.0
+    ports:
+      - 6335:6335
     volumes:
-      - ./qdrant_data:/data
+      - ./qdrant_data:/qdrant/storage
+      - ./qdrant_config.yaml:/qdrant/config/config.yaml
+      - ./run.sh:/qdrant/run.sh
+    environment:
+      - INITIAL_PEER=${INITIAL_PEER}
+      - BOOTSTRAP_PEER=${BOOTSTRAP_PEER}
+    entrypoint: /qdrant/run.sh
   proxy:
     image: nginx:stable-alpine
     ports:
