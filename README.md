@@ -7,7 +7,7 @@ QDrant docker-compose deployment with basic auth/nginx proxy
 First create a passwd file for auth
 
 ```bash
-hwpaddwd -b -c .htpasswd qdrant mypassword
+htpasswd -b -c .htpasswd qdrant mypassword
 ```
 
 Then start container with
