@@ -1,7 +1,7 @@
 version: '3.9'
 services:
   qdrant:
-    image: qdrant/qdrant:v1.1.0
+    image: qdrant/qdrant:v1.1.1
     ports:
       - 6335:6335
     volumes:
